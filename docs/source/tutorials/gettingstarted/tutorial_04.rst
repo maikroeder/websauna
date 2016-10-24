@@ -8,9 +8,9 @@ To get Websauna application started, you need to
 
 * Create a database
 
-* Have a user which can connect database
+* Have a user which can connect to the database
 
-* Create Websauna initial database table creation scripts
+* Create the initial database table creation scripts for Websauna 
 
 * Run these scripts against your local database
 
@@ -33,10 +33,10 @@ You need to sudo to ``postgres`` user to run any :term:`PostgreSQL` commands:
 
     sudo -u postgres createdb myapp_dev
 
-Changing database name or authentication details
-================================================
+Changing the database name or the authentication details
+========================================================
 
-If you need to change the default database name or its connection details you can edit :ref:`sqlalchemy.url <sqlalchemy.url>` settings in :term:`development.ini`.
+If you need to change the default database name or its connection details you can edit the :ref:`sqlalchemy.url <sqlalchemy.url>` settings in :term:`development.ini`.
 
 Creating migration scripts
 ==========================
@@ -45,7 +45,7 @@ Creating migration scripts
 
     This will be covered later in detail.
 
-Websauna stores data in SQL databases in tables. When these tables are changed, the database must be instructed to perform the changes. The change is recorded as a migration script which can repeatably run across several computers (coworkers, different servers). Initially you will need the migration scripts to create database tables for user and groups of your website.
+Websauna stores data in SQL database tables. When these tables are changed, the database must be instructed to perform the changes. The change is recorded as a migration script which can be repeatably run across several computers (coworkers, different servers). Initially you will need the migration script to create the database tables for the user and groups of your website.
 
 We use the :ref:`ws-alembic` command for this task. You run `ws-alembic` in your package root folder::
 
@@ -54,7 +54,7 @@ We use the :ref:`ws-alembic` command for this task. You run `ws-alembic` in your
 
 This creates the migration script for the default ``user`` and ``groups`` SQL tables.
 
-Now you should be able to locate migration scripts::
+Now you should be able to locate the migration scripts::
 
     ls alembic/versions
     ...
